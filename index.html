@@ -3,93 +3,86 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Lumira Ville — [Tên bạn]</title>
-  <meta name="description" content="Giới thiệu Lumira Ville — Khu đô thị phức hợp tại Hải Phòng. Liên hệ: 0925 159 339" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%230d6efd'/%3E%3Ctext x='32' y='39' font-size='28' text-anchor='middle' fill='white' font-family='Arial'%3EL%3C/text%3E%3C/svg%3E" />
+  <title>Lumira Ville — Trang cá nhân</title>
+  <meta name="description" content="Thông tin dự án Lumira Ville Hải Phòng — Liên hệ: 0925 159 339" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d6efd'/%3E%3Ctext x='32' y='39' font-size='28' text-anchor='middle' fill='white' font-family='Arial'%3ELV%3C/text%3E%3C/svg%3E" />
   <style>
     :root{
       --accent:#0d6efd;
+      --ink:#0b1220;
       --muted:#6b7280;
-      --bg:#f8fafc;
+      --bg:#f7fafc;
       --card:#ffffff;
-      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     }
     *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:#0b1220;line-height:1.5}
-    header{background:linear-gradient(90deg, rgba(13,110,253,0.9), rgba(7,89,182,0.95));color:#fff;padding:36px 18px;}
-    .container{max-width:1100px;margin:0 auto;padding:18px;}
-    .nav{display:flex;justify-content:space-between;align-items:center}
-    .logo{font-weight:700;letter-spacing:0.4px}
-    .cta{background:#fff;color:var(--accent);padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
-    .hero{display:flex;gap:24px;align-items:center}
-    .hero-left{flex:1}
-    .hero-right{flex:1}
-    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(12,20,40,0.08)}
-    h1{margin:0 0 10px;font-size:28px}
-    p.lead{color:#eef4ff;font-weight:600}
-    section{padding:30px 0}
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .amenities{display:flex;flex-wrap:wrap;gap:12px}
-    .amenities .item{background:#f1f5f9;padding:10px 12px;border-radius:8px;color:var(--muted);font-weight:600}
-    .map{height:340px;border-radius:12px;overflow:hidden}
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+
+    /* Header */
+    .topbar{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #e5e7eb}
+    .container{max-width:1180px;margin:0 auto;padding:0 18px}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+    .brand{font-weight:800;letter-spacing:.4px}
+    .nav a{text-decoration:none;color:var(--ink)}
+    .navlinks{display:flex;gap:16px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:1px solid #d1d5db;background:#fff;font-weight:700}
+    .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+    /* Hero */
+    .hero{position:relative;min-height:68vh;display:flex;align-items:flex-end;background:url('https://lumira-ville.vn/wp-content/uploads/2025/05/phoi-canh-du-an-lumira-ville-1-1024x576.jpg') center/cover no-repeat}
+    .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25) 0%,rgba(0,0,0,.55) 60%, rgba(0,0,0,.75) 100%);}
+    .hero-inner{position:relative;z-index:1;width:100%}
+    .hero-card{color:#fff;padding:28px;border-radius:16px;background:rgba(0,0,0,.35);backdrop-filter: blur(3px);max-width:900px;margin:24px auto}
+    .hero h1{margin:0 0 6px;font-size:34px}
+    .sublead{opacity:.9;font-weight:500}
+    .cta-row{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+
+    /* Sections */
+    section{padding:40px 0}
+    h2{margin:0 0 14px}
+    .card{background:var(--card);border-radius:14px;box-shadow:0 8px 28px rgba(20,30,55,.08);padding:18px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .gallery img{width:100%;height:200px;object-fit:cover;border-radius:12px;box-shadow:0 8px 22px rgba(12,20,40,.12)}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .contact .info p{margin:.2rem 0;color:var(--muted)}
+    .floating-call{position:fixed;right:18px;bottom:18px;z-index:1000}
+    .floating-call a{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;text-decoration:none;padding:12px 16px;border-radius:999px;font-weight:800;box-shadow:0 10px 24px rgba(13,110,253,.35)}
+
     footer{padding:18px 0;color:var(--muted);font-size:14px;text-align:center}
-    .contact-line{display:flex;gap:12px;align-items:center;margin-top:8px}
-    .phone-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700}
-    /* Floating Zalo button */
-    .zalo-float{position:fixed;right:16px;bottom:16px;z-index:999}
-    .zalo-float a{display:inline-flex;align-items:center;gap:8px;background:#1da1f2;color:#fff;padding:12px 14px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 6px 18px rgba(12,20,40,0.15)}
-    @media (max-width:800px){
-      .grid{grid-template-columns:1fr}
-      .hero{flex-direction:column}
+
+    @media (max-width:900px){
+      .grid-2,.contact{grid-template-columns:1fr}
       .gallery{grid-template-columns:repeat(2,1fr)}
+      .hero{min-height:60vh}
     }
   </style>
 </head>
 <body>
-  <header>
+  <div class="topbar">
     <div class="container">
       <div class="nav">
-        <div class="logo">Lumira Ville — Thông tin</div>
-        <a class="cta" href="#contact">Liên hệ: 0925 159 339</a>
-      </div>
-
-      <div class="hero" style="margin-top:18px">
-        <div class="hero-left">
-          <div class="card">
-            <h1>Lumira Ville — Khu đô thị phức hợp tại Hải Phòng</h1>
-            <p class="lead">Quy mô ~11.8 ha • Sản phẩm: nhà liền kề, biệt thự, shophouse • Vị trí: P. Nam Hải, Quận Hải An, TP. Hải Phòng.</p>
-            <p style="color:#eaf2ff">Lumira Ville được phát triển bài bản với hạ tầng kết nối và hệ tiện ích nội khu, phù hợp cho cả mục đích an cư và đầu tư.</p>
-            <div style="margin-top:12px">
-              <a href="tel:0925159339" class="phone-btn">Gọi ngay: 0925 159 339</a>
-            </div>
-          </div>
+        <div class="brand">Lumira Ville • Trang cá nhân</div>
+        <div class="navlinks">
+          <a href="#about">Giới thiệu</a>
+          <a href="#location">Vị trí</a>
+          <a href="#masterplan">Mặt bằng</a>
+          <a href="#contact" class="btn primary">Gọi: 0925 159 339</a>
         </div>
+      </div>
+    </div>
+  </div>
 
-        <div class="hero-right">
-          <div class="card">
-            <h3>Tổng quan nhanh</h3>
-            <ul style="margin:8px 0 0 18px;color:var(--muted)">
-              <li>Tổng diện tích: ~11.85 ha</li>
-              <li>Sản phẩm: Liền kề, Biệt thự, Shophouse</li>
-              <li>Mật độ xây dựng: ~58.8%</li>
-              <li>Vị trí: Đường Liên Phường, P. Nam Hải, Quận Hải An, TP. Hải Phòng</li>
-            </ul>
-          </div>
-
-          <div style="height:12px"></div>
-
-          <div class="card">
-            <h3>Tiện ích nổi bật</h3>
-            <div class="amenities">
-              <div class="item">Công viên cây xanh</div>
-              <div class="item">Trung tâm thương mại</div>
-              <div class="item">Khu vui chơi</div>
-              <div class="item">Bãi đỗ xe</div>
-              <div class="item">An ninh 24/7</div>
-            </div>
-          </div>
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="hero-card">
+        <h1>Lumira Ville — Khu đô thị phức hợp tại Hải Phòng</h1>
+        <div class="sublead">Biệt thự • Liền kề • Shophouse — Quy mô ~11.85 ha — Nam Hải, Hải An</div>
+        <div class="cta-row">
+          <a class="btn primary" href="tel:0925159339">Gọi ngay 0925 159 339</a>
+          <a class="btn" href="https://zalo.me/0925159339" target="_blank" rel="noopener">Chat Zalo</a>
         </div>
       </div>
     </div>
@@ -97,30 +90,42 @@
 
   <main class="container" role="main">
     <section id="about">
-      <div class="card">
-        <h2>Giới thiệu dự án</h2>
-        <p style="color:var(--muted)">
-          Lumira Ville là dự án khu đô thị phức hợp, thiết kế kết hợp giữa không gian thương mại và không gian sống. Dự án tích hợp các tiện ích nội khu và có kết nối thuận lợi đến hạ tầng lớn quanh khu vực Hải An. Thông tin chi tiết và cập nhật chính thức có thể tham khảo tại trang dự án và các bài viết/press review. 
-        </p>
+      <div class="grid-2">
+        <div class="card">
+          <h2>Giới thiệu dự án</h2>
+          <p>Lumira Ville là khu đô thị phức hợp hiện đại tại phường Nam Hải, quận Hải An, Hải Phòng; sản phẩm gồm liền kề, biệt thự và shophouse, phát triển hệ tiện ích nội khu đồng bộ.</p>
+          <ul>
+            <li>Quy mô: ~11,85 ha • Mật độ xây dựng ~58,8%</li>
+            <li>Số lượng dự kiến: ~372 căn (biệt thự ~60; liền kề &amp; shophouse ~312)</li>
+            <li>Định hướng: Sống — Làm việc — Giải trí trong một không gian</li>
+          </ul>
+          <small style="color:var(--muted)">*Nội dung tổng hợp từ trang dự án & bài viết báo chí.</small>
+        </div>
+        <div class="card">
+          <h2>Hình phối cảnh</h2>
+          <div class="gallery" style="grid-template-columns:1fr">
+            <img src="https://lumira-ville.vn/wp-content/uploads/2025/05/phoi-canh-du-an-lumira-ville-1-scaled.jpg" alt="Phối cảnh Lumira Ville">
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="location">
-      <div class="grid">
+      <div class="grid-2">
         <div class="card">
-          <h3>Vị trí</h3>
-          <p style="color:var(--muted)">Tọa lạc trên đường Liên Phường, P. Nam Hải, Quận Hải An — vùng kết nối các trục giao thông quan trọng (vành đai, cảng, sân bay). Vị trí thuận tiện cho giao thương và logistic.</p>
-          <ul style="color:var(--muted)">
-            <li>Cách Cảng/Logistics trọng điểm &amp; sân bay trong tầm kết nối</li>
-            <li>Gần các tuyến đường chính của Hải Phòng</li>
+          <h2>Vị trí & Kết nối</h2>
+          <p>Dự án nằm trên đường Liên Phường (gần trục Đặng Kinh & Vành đai 3), kết nối nhanh sân bay Cát Bi, cảng Đình Vũ và trung tâm TP.</p>
+          <ul>
+            <li>Sân bay Cát Bi ~2–5 km</li>
+            <li>Trung tâm hành chính Hải Phòng ~10 phút</li>
+            <li>Cao tốc Hà Nội – Hải Phòng ~10 km</li>
           </ul>
         </div>
         <div class="card">
-          <h3>Bản đồ</h3>
-          <div class="map" id="map">
-            <iframe
-              width="100%" height="100%" frameborder="0" style="border:0"
-              src="https://www.google.com/maps?q=Li%C3%AAn+Ph%C6%B0%E1%BB%9Dng+Nam+H%E1%BA%A3i+H%E1%BA%A3i+Ph%C3%B2ng&output=embed" allowfullscreen>
+          <h2>Bản đồ</h2>
+          <div style="height:360px;border-radius:14px;overflow:hidden">
+            <iframe width="100%" height="100%" frameborder="0" style="border:0"
+              src="https://www.google.com/maps?q=Li%C3%AAn+Ph%C6%B0%E1%BB%9Dng,+Nam+H%E1%BA%A3i,+H%E1%BA%A3i+An,+H%E1%BA%A3i+Ph%C3%B2ng&output=embed" allowfullscreen>
             </iframe>
           </div>
         </div>
@@ -129,43 +134,50 @@
 
     <section id="masterplan">
       <div class="card">
-        <h2>Mặt bằng & Sản phẩm</h2>
-        <p style="color:var(--muted)">Dự án quy hoạch mặt bằng tổng thể gồm đất ở, cây xanh, hạ tầng giao thông nội khu và bãi đỗ xe. Sản phẩm gồm nhà liền kề, biệt thự, shophouse — phù hợp để ở hoặc khai thác kinh doanh.</p>
-        <div style="margin-top:12px" class="gallery">
-          <img src="https://via.placeholder.com/800x500?text=Ph%E1%91%89i+c%E1%BA%A3nh+1" alt="phoi canh 1">
-          <img src="https://via.placeholder.com/800x500?text=Ph%E1%91%89i+c%E1%BA%A3nh+2" alt="phoi canh 2">
-          <img src="https://via.placeholder.com/800x500?text=M%E1%BA%B7t+b%E1%BA%B1ng" alt="mat bang">
+        <h2>Mặt bằng & Tiện ích</h2>
+        <p>Sơ đồ mặt bằng và cụm tiện ích nội khu đa dạng phục vụ cư dân.</p>
+        <div class="gallery">
+          <img src="https://lumira-ville.vn/wp-content/uploads/2025/05/mba-1024x505.jpg" alt="Mặt bằng tổng thể">
+          <img src="https://lumira-ville.vn/wp-content/uploads/2025/07/z6852710331842_6361aa0162f5b92ece124adb37c95bf4.jpg" alt="Cụm tiện ích & tuyến phố thương mại">
+          <img src="https://lumira-ville.vn/wp-content/uploads/2025/05/phoi-canh-du-an-lumira-ville-1-1024x576.jpg" alt="Phối cảnh tổng thể">
         </div>
       </div>
     </section>
 
     <section id="contact">
-      <div class="card">
-        <h2>Liên hệ — [Tên bạn]</h2>
-        <p style="color:var(--muted)">Mọi thông tin chi tiết, báo giá, chính sách bán hàng và lịch tham quan nhà mẫu, xin vui lòng liên hệ trực tiếp:</p>
-        <div class="contact-line">
-          <strong>Hotline:</strong>
-          <a href="tel:0925159339" class="phone-btn">0925 159 339</a>
+      <div class="contact">
+        <div class="card info">
+          <h2>Liên hệ</h2>
+          <p>Quan tâm dự án, cần bảng giá & chính sách mới nhất — gọi trực tiếp hoặc nhắn Zalo:</p>
+          <p><strong>Hotline:</strong> <a href="tel:0925159339">0925 159 339</a></p>
+          <p><strong>Zalo:</strong> <a href="https://zalo.me/0925159339" target="_blank" rel="noopener">zalo.me/0925159339</a></p>
+          <p>Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
         </div>
-        <p style="margin-top:8px;color:var(--muted)">Hoặc gửi email: <a href="mailto:contact@example.com">contact@example.com</a></p>
+        <div class="card">
+          <h2>Đặt lịch xem thực tế</h2>
+          <form onsubmit="alert('Đã gửi thông tin! Mình sẽ liên hệ ngay.'); return false;">
+            <label>Họ & tên<br><input required name="name" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px"></label><br><br>
+            <label>Số điện thoại<br><input required name="phone" pattern="[0-9\s]+" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px"></label><br><br>
+            <label>Nội dung quan tâm<br><textarea name="msg" rows="4" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px"></textarea></label><br><br>
+            <button class="btn primary" type="submit">Gửi yêu cầu</button>
+          </form>
+          <small style="color:var(--muted)">*Biểu mẫu demo chạy tại chỗ. Có thể nối sang Google Forms/Sheets theo yêu cầu.</small>
+        </div>
       </div>
     </section>
   </main>
 
+  <div class="floating-call"><a href="tel:0925159339">Gọi 0925 159 339</a></div>
+
   <footer>
     <div class="container">
-      <div class="card" style="padding:14px">
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
-          <div>© <strong>Lumira Ville — [Tên bạn]</strong> • Liên hệ: 0925 159 339</div>
-          <div style="color:var(--muted);font-size:13px">Nguồn: lumira-ville.vn &amp; báo chí</div>
+      <div class="card" style="padding:12px">
+        <div>© Trang cá nhân Lumira Ville • Hotline 0925 159 339</div>
+        <div style="font-size:12px;margin-top:6px">
+          Ảnh tham khảo từ lumira-ville.vn — chỉ dùng minh hoạ. Nên xin phép nếu tải về sử dụng lại.
         </div>
       </div>
     </div>
   </footer>
-
-  <!-- Zalo floating chat button -->
-  <div class="zalo-float">
-    <a href="https://zalo.me/0925159339" target="_blank" rel="noopener">Chat Zalo: 0925 159 339</a>
-  </div>
 </body>
 </html>
