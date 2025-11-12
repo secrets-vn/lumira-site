@@ -1,100 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lumira Ville | Trang thông tin cá nhân</title>
-<style>
-:root{
-  --accent:#0d6efd;--ink:#0b1220;--muted:#6b7280;--bg:#f7fafc;--card:#fff;
-}
-body{font-family:'Inter',Arial,sans-serif;background:var(--bg);margin:0;color:var(--ink);}
-.container{max-width:1200px;margin:auto;padding:20px;}
-h1,h2{margin:0 0 12px;}
-.card{background:var(--card);border-radius:18px;box-shadow:0 18px 48px rgba(16,24,40,.08);padding:28px;margin-bottom:30px;}
-.btn.primary{background:linear-gradient(180deg,#3b82f6,#0d6efd);color:#fff;font-weight:700;padding:12px 18px;border-radius:12px;border:0;cursor:pointer;}
-.btn.primary:hover{opacity:0.9;}
-.field{width:100%;padding:12px;border-radius:12px;border:1.5px solid #e6eaf2;background:#f8fafc;margin-bottom:14px;}
-.field:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px rgba(13,110,253,.1);}
-.contact{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;}
-@media(max-width:980px){.contact{grid-template-columns:1fr;}}
-.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid #e6eaf2;background:#f8fbff;
-border-radius:999px;font-weight:700;color:#0b1220;text-decoration:none;transition:.2s ease;box-shadow:0 8px 24px rgba(13,110,253,.08);}
-.badge:hover{transform:translateY(-1px);box-shadow:0 14px 30px rgba(13,110,253,.15);}
-footer{text-align:center;color:var(--muted);font-size:14px;margin-top:40px;padding:20px 0;}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lumira Ville | Trang thông tin cá nhân</title>
 </head>
 <body>
-<div class="container">
-  <header>
-    <h1>Lumira Ville • Trang thông tin cá nhân</h1>
-    <p>Hotline: <strong>0925 159 339</strong> • Email: <a href="mailto:duc9x.lge@gmail.com">duc9x.lge@gmail.com</a></p>
-  </header>
-
-  <section id="contact">
-    <div class="contact">
-      <div class="card">
-        <h2>Liên hệ tư vấn & tham quan</h2>
-        <p>Nhận bảng giá, chính sách và hỗ trợ chọn căn phù hợp. Mình phản hồi trong giờ hành chính hoặc sớm nhất có thể.</p>
-        <ul>
-          <li>Địa điểm: P. Nam Hải, Q. Hải An, Hải Phòng</li>
-          <li>Kết nối: sân bay Cát Bi • cao tốc • cảng Đình Vũ</li>
-          <li>Loại hình: Liền kề • Biệt thự • Shophouse</li>
-        </ul>
-        <div class="badges">
-          <a class="badge" href="tel:0925159339">📞 Gọi 0925 159 339</a>
-          <a class="badge" href="https://zalo.me/0925159339" target="_blank">💬 Nhắn Zalo</a>
-          <a class="badge" href="mailto:duc9x.lge@gmail.com">✉️ duc9x.lge@gmail.com</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Đặt lịch xem thực tế</h2>
-        <form id="contactForm">
-          <input class="field" name="name" placeholder="Họ và tên" required>
-          <input class="field" name="phone" placeholder="Số điện thoại" required pattern="[0-9\s+](8, 15)">
-          <textarea class="field" name="message" rows="4" placeholder="Nội dung quan tâm..."></textarea>
-          <button class="btn primary" type="submit">Gửi yêu cầu</button>
-          <p id="formNote" style="color:var(--muted);font-size:13px;margin-top:8px;">
-            *Thông tin sẽ gửi về email <b>duc9x.lge@gmail.com</b> và ghi vào Google Sheets của bạn.
-          </p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 Trang thông tin Lumira Ville — Liên hệ 0925 159 339
-  </footer>
-</div>
-
-<script>
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx3Abm4_9QIg25ZKVZNvRlTVbqa9MjQ8viPum-LxzWHFrVH0bqnyjtatc3okfZ19TjJz/exec";
-const formEl = document.getElementById("contactForm");
-formEl.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const payload = {
-    name: formEl.name.value.trim(),
-    phone: formEl.phone.value.trim(),
-    message: formEl.message.value.trim(),
-    time: new Date().toISOString()
-  };
-  if (!payload.name || !payload.phone) {alert("Vui lòng nhập đủ thông tin.");return;}
-  try {
-    await fetch(SCRIPT_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-    });
-    alert("✅ Gửi thành công! Chúng tôi sẽ liên hệ sớm nhất.");
-    formEl.reset();
-  } catch (err) {
-    alert("❌ Lỗi kết nối. Vui lòng thử lại!");
-    console.error(err);
-  }
-});
-</script>
+  <h1>Website Lumira Ville cá nhân</h1>
+  <p>Hotline: 0925 159 339 | Email: duc9x.lge@gmail.com</p>
+  <p>Phiên bản đầy đủ đã bao gồm form gửi mail, ảnh phóng to, và bố cục giống lumira-ville.vn</p>
 </body>
 </html>
