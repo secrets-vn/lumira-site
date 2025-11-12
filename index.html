@@ -1,352 +1,259 @@
-<!-- === BDS REALTY - LUMIRA STYLE SECTION (DROP-IN) === -->
-<section id="bds-lumira" class="bds-wrap">
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lumira Ville | Trang thông tin cá nhân</title>
+  <meta name="description" content="Thông tin dự án Lumira Ville Hải Phòng – Liên hệ 0925 159 339 (Zalo) – duc9x.lge@gmail.com" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d6efd'/%3E%3Ctext x='32' y='39' font-size='28' text-anchor='middle' fill='white' font-family='Arial'%3ELV%3C/text%3E%3C/svg%3E">
+  <meta property="og:title" content="Lumira Ville | Trang thông tin cá nhân">
+  <meta property="og:description" content="Liên hệ 0925 159 339 (Zalo) – duc9x.lge@gmail.com">
+  <meta property="og:image" content="https://lumira-ville.vn/wp-content/uploads/2025/05/phoi-canh-du-an-lumira-ville-1-1024x576.jpg">
+  <meta property="og:type" content="website">
   <style>
-    /* ====== Scoped Styles for #bds-lumira only ====== */
-    #bds-lumira { --max:1200px; --pad:20px; --gap:18px; --brand:#0e4b8f; --accent:#19a2a6; --text:#1d2630; --muted:#6b7280; --bg:#f7f8fb; }
-    #bds-lumira * { box-sizing: border-box; }
-    #bds-lumira .container{max-width:var(--max); margin:0 auto; padding:var(--pad);}
-    #bds-lumira h2{font-size:28px; line-height:1.2; margin:28px 0 14px; color:var(--text)}
-    #bds-lumira h3{font-size:22px; margin:18px 0 10px; color:var(--text)}
-    #bds-lumira p{color:var(--text); line-height:1.7; margin:8px 0}
-    #bds-lumira .muted{color:var(--muted)}
-    #bds-lumira .lead{font-size:18px}
-    #bds-lumira .badge{display:inline-block; padding:6px 10px; border-radius:999px; background:linear-gradient(135deg,var(--brand),var(--accent)); color:#fff; font-weight:600; font-size:12px; letter-spacing:.3px}
-    #bds-lumira .hero{background:var(--bg); border-radius:16px; padding:24px; display:grid; gap:var(--gap); grid-template-columns:1.2fr .8fr; align-items:center}
-    #bds-lumira .hero .title{font-size:34px; margin:4px 0 10px; color:var(--text)}
-    #bds-lumira .hero .facts{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:8px}
-    #bds-lumira .fact{background:#fff; border:1px solid #e8ecf2; border-radius:12px; padding:12px}
-    #bds-lumira .fact b{display:block; font-size:18px; color:var(--brand)}
-    #bds-lumira .nav{display:flex; gap:8px; flex-wrap:wrap; margin:18px 0 6px}
-    #bds-lumira .nav a{padding:10px 12px; border:1px solid #e8ecf2; border-radius:10px; color:var(--text); text-decoration:none; background:#fff}
-    #bds-lumira .nav a:hover{border-color:var(--brand); color:var(--brand)}
-    /* Cards & grids */
-    #bds-lumira .card{background:#fff; border:1px solid #e8ecf2; border-radius:16px; padding:18px}
-    #bds-lumira .grid-2{display:grid; gap:var(--gap); grid-template-columns:repeat(2,minmax(0,1fr))}
-    #bds-lumira .grid-3{display:grid; gap:var(--gap); grid-template-columns:repeat(3,minmax(0,1fr))}
-    /* Gallery */
-    #bds-lumira .gallery{display:grid; gap:var(--gap); grid-template-columns:repeat(3,minmax(0,1fr))}
-    #bds-lumira .gallery figure{margin:0; border-radius:14px; overflow:hidden; cursor:zoom-in; border:1px solid #e8ecf2; background:#fff}
-    #bds-lumira .gallery img{width:100%; height:220px; object-fit:cover; display:block; transition:transform .25s ease}
-    #bds-lumira .gallery figure:hover img{transform:scale(1.03)}
-    /* Lightbox */
-    #bds-lumira .lightbox{position:fixed; inset:0; background:rgba(0,0,0,.88); display:none; align-items:center; justify-content:center; z-index:9999}
-    #bds-lumira .lightbox.open{display:flex}
-    #bds-lumira .lightbox img{max-width:96vw; max-height:88vh; width:auto; height:auto}
-    #bds-lumira .lb-ui{position:absolute; inset:0; display:flex; align-items:center; justify-content:space-between; padding:0 10px}
-    #bds-lumira .lb-btn{background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); color:#fff; padding:10px 12px; border-radius:12px; cursor:pointer; backdrop-filter: blur(4px)}
-    #bds-lumira .lb-close{position:absolute; top:14px; right:14px}
-    /* Lists */
-    #bds-lumira ul{margin:10px 0; padding-left:18px}
-    #bds-lumira li{margin:6px 0}
-    /* Contact form */
-    #bds-lumira form{display:grid; gap:12px}
-    #bds-lumira input, #bds-lumira textarea, #bds-lumira select{width:100%; padding:12px 14px; border-radius:10px; border:1px solid #dfe4ea; font-size:15px}
-    #bds-lumira button{padding:12px 16px; border:none; border-radius:10px; background:linear-gradient(135deg,var(--brand),var(--accent)); color:#fff; font-weight:600; cursor:pointer}
-    #bds-lumira .note{font-size:13px; color:var(--muted)}
-    /* Responsive */
-    @media (max-width: 960px){
-      #bds-lumira .hero{grid-template-columns:1fr}
-      #bds-lumira .grid-2{grid-template-columns:1fr}
-      #bds-lumira .grid-3, #bds-lumira .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
-      #bds-lumira .hero .title{font-size:28px}
+    :root{
+      --ink:#0b1220; --muted:#6b7280; --bg:#f7fafc; --card:#ffffff; --accent:#0d6efd;
     }
-    @media (max-width: 560px){
-      #bds-lumira .gallery{grid-template-columns:1fr}
-      #bds-lumira .hero{padding:16px}
-    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+    a{color:inherit}
+    .container{max-width:1200px;margin:0 auto;padding:0 18px}
+    /* Topbar */
+    .topbar{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid #e5e7eb}
+    .nav{height:64px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:800;letter-spacing:.3px}
+    .navlinks{display:flex;gap:16px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid #d1d5db;background:#fff;font-weight:700;text-decoration:none}
+    .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+    /* Hero */
+    .hero{position:relative;min-height:70vh;display:flex;align-items:flex-end;background:url('https://lumira-ville.vn/wp-content/uploads/2025/05/phoi-canh-du-an-lumira-ville-1-1024x576.jpg') center/cover no-repeat}
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.75))}
+    .hero-inner{position:relative;z-index:1;width:100%;padding:40px 0}
+    .hero-card{color:#fff;background:rgba(0,0,0,.35);backdrop-filter:blur(4px);padding:24px;border-radius:16px;max-width:920px;margin:0 auto;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+    .hero h1{margin:0 0 6px;font-size:36px}
+    .sublead{opacity:.9}
+    .cta-row{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+    /* Sections */
+    section{padding:48px 0}
+    h2{margin:0 0 14px}
+    .card{background:var(--card);border-radius:16px;box-shadow:0 10px 32px rgba(16,24,40,.08);padding:18px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:#eef2ff;color:#3b82f6;font-weight:700;font-size:13px}
+    .gallery img{width:100%;height:220px;object-fit:cover;border-radius:14px;box-shadow:0 10px 28px rgba(12,20,40,.12)}
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .floating{position:fixed;right:16px;bottom:16px;z-index:1000}
+    .floating a{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:800;box-shadow:0 12px 28px rgba(13,110,253,.35)}
+    footer{padding:22px 0;color:var(--muted);font-size:14px;text-align:center}
+    @media (max-width:980px){.grid-2,.contact{grid-template-columns:1fr}.grid-3{grid-template-columns:repeat(2,1fr)}.hero{min-height:60vh}}
   </style>
 
-  <div class="container">
-    <!-- Nav chips -->
-    <div class="nav">
-      <a href="#tong-quan">Tổng quan</a>
-      <a href="#vi-tri">Vị trí</a>
-      <a href="#tien-ich">Tiện ích</a>
-      <a href="#mat-bang">Mặt bằng</a>
-      <a href="#thiet-ke">Thiết kế</a>
-      <a href="#tien-do">Tiến độ</a>
-      <a href="#phap-ly">Pháp lý</a>
-      <a href="#lien-he">Liên hệ</a>
-    </div>
-
-    <!-- HERO -->
-    <div class="hero card" id="tong-quan">
-      <div>
-        <span class="badge">DỰ ÁN NỔI BẬT</span>
-        <h1 class="title">Lumira Ville – Khu đô thị mới ven cảng</h1>
-        <p class="lead muted">Biệt thự • Liền kề • Shophouse — Quy mô ~11,85 ha</p>
-        <div class="facts">
-          <div class="fact"><b>Vị trí</b><span>Q. Hải An, TP. Hải Phòng</span></div>
-          <div class="fact"><b>Chủ đầu tư</b><span>H2H Việt Nam</span></div>
-          <div class="fact"><b>Phát triển</b><span>Hưng Thịnh Land</span></div>
-          <div class="fact"><b>Pháp lý</b><span>Lâu dài/Ổn định*</span></div>
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"RealEstateAgent",
+    "name":"Thông tin Lumira Ville",
+    "url":"https://batdongsanrealty.com",
+    "telephone":"+84-925-159-339",
+    "email":"duc9x.lge@gmail.com",
+    "areaServed":"Hai Phong, Viet Nam",
+    "sameAs":["https://zalo.me/0925159339"]
+  }
+  </script>
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="nav">
+        <div class="brand">Lumira Ville • Trang thông tin</div>
+        <div class="navlinks">
+          <a href="#about">Giới thiệu</a>
+          <a href="#location">Vị trí</a>
+          <a href="#masterplan">Mặt bằng</a>
+          <a href="#contact" class="btn primary">Gọi: 0925 159 339</a>
         </div>
-        <p class="note">*Cập nhật pháp lý thực tế của dự án bạn đang bán; tuỳ sản phẩm có thể khác nhau.</p>
-      </div>
-      <div class="card">
-        <h3>Tóm tắt nhanh</h3>
-        <ul>
-          <li>Loại hình: Biệt thự, Liền kề, Shophouse</li>
-          <li>Quy mô: ~11,85 ha • Mật độ xây dựng ~35–40%</li>
-          <li>Tiện ích: công viên, hồ cảnh quan, trường học, thương mại</li>
-          <li>Bàn giao dự kiến: <b>Quý IV/2025</b> (thay bằng mốc chính xác)</li>
-          <li>Giá tham khảo: <b>…</b> (điền giá thực tế)</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- GALLERY (click => lightbox) -->
-    <div class="card" style="margin-top:16px">
-      <h2>Thư viện hình ảnh</h2>
-      <p class="muted">Click vào ảnh để xem khổ rộng • Vuốt để chuyển ảnh</p>
-      <div class="gallery" data-gallery>
-        <!-- Thay link ảnh thật của bạn ở data-full và src -->
-        <figure data-full="https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1920">
-          <img loading="lazy" alt="Phối cảnh tổng thể" src="https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=900">
-        </figure>
-        <figure data-full="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1920">
-          <img loading="lazy" alt="Nhà liền kề khu A" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=900">
-        </figure>
-        <figure data-full="https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1920">
-          <img loading="lazy" alt="Công viên trung tâm" src="https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=900">
-        </figure>
-        <figure data-full="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1920">
-          <img loading="lazy" alt="Nội thất tham khảo" src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=900">
-        </figure>
-        <figure data-full="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=1920">
-          <img loading="lazy" alt="Shophouse trục chính" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=900">
-        </figure>
-        <figure data-full="https://images.unsplash.com/photo-1505692794403-34d4982d2a86?q=80&w=1920">
-          <img loading="lazy" alt="Hồ cảnh quan" src="https://images.unsplash.com/photo-1505692794403-34d4982d2a86?q=80&w=900">
-        </figure>
-      </div>
-    </div>
-
-    <!-- VỊ TRÍ -->
-    <div class="card" id="vi-tri">
-      <h2>Vị trí kết nối</h2>
-      <div class="grid-2">
-        <div>
-          <p><b>Địa chỉ:</b> Đường Liên Phường, P. Nam Hải, Q. Hải An, TP. Hải Phòng (cập nhật chính xác theo hồ sơ của bạn).</p>
-          <ul>
-            <li>5–10 phút đến cảng & khu công nghiệp trọng điểm</li>
-            <li>Kết nối trục đường huyết mạch, gần cao tốc Hà Nội – Hải Phòng</li>
-            <li>Tiện ích ngoại khu: trường học, y tế, thương mại… trong bán kính 5–10km</li>
-          </ul>
-        </div>
-        <div>
-          <!-- Nhúng map: thay iframe src = Google Maps của dự án -->
-          <div style="position:relative; padding-top:56%; border-radius:12px; overflow:hidden; border:1px solid #e8ecf2">
-            <iframe title="Bản đồ dự án" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d52363.917!2d106.727!3d20.844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0" 
-              style="position:absolute; inset:0; width:100%; height:100%; border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TIỆN ÍCH -->
-    <div class="card" id="tien-ich">
-      <h2>Tiện ích nội khu</h2>
-      <div class="grid-3">
-        <div class="fact"><b>Công viên trung tâm</b><span class="muted">Đường dạo bộ, sân chơi trẻ em</span></div>
-        <div class="fact"><b>Hồ cảnh quan</b><span class="muted">Không gian sinh thái & thư giãn</span></div>
-        <div class="fact"><b>Clubhouse</b><span class="muted">Gym, bể bơi, sinh hoạt cộng đồng</span></div>
-        <div class="fact"><b>An ninh 24/7</b><span class="muted">Cổng kiểm soát, camera toàn khu</span></div>
-        <div class="fact"><b>Trường – TM</b><span class="muted">Quy hoạch giáo dục & thương mại</span></div>
-        <div class="fact"><b>Hạ tầng đồng bộ</b><span class="muted">Đường nội khu, cây xanh, chiếu sáng</span></div>
-      </div>
-    </div>
-
-    <!-- MẶT BẰNG / THIẾT KẾ -->
-    <div class="grid-2" id="mat-bang">
-      <div class="card">
-        <h2>Mặt bằng tổng thể</h2>
-        <p>Phân khu dự kiến: Khu Biệt thự, Khu Liền kề, Khu Shophouse. Mật độ & chỉ tiêu quy hoạch theo phê duyệt (cập nhật số liệu chính xác).</p>
-        <div class="gallery" data-gallery>
-          <figure data-full="https://images.unsplash.com/photo-1582582494700-66ea1d8d63b6?q=80&w=1920">
-            <img loading="lazy" alt="Sơ đồ tổng mặt bằng" src="https://images.unsplash.com/photo-1582582494700-66ea1d8d63b6?q=80&w=900">
-          </figure>
-          <figure data-full="https://images.unsplash.com/photo-1600585153490-76fb20a32601?q=80&w=1920">
-            <img loading="lazy" alt="Phân khu biệt thự" src="https://images.unsplash.com/photo-1600585153490-76fb20a32601?q=80&w=900">
-          </figure>
-          <figure data-full="https://images.unsplash.com/photo-1487956382158-bb926046304a?q=80&w=1920">
-            <img loading="lazy" alt="Phân khu liền kề" src="https://images.unsplash.com/photo-1487956382158-bb926046304a?q=80&w=900">
-          </figure>
-        </div>
-      </div>
-      <div class="card" id="thiet-ke">
-        <h2>Thiết kế sản phẩm</h2>
-        <ul>
-          <li><b>Biệt thự:</b> DT đất 180–300m²; 3–4 tầng; mặt tiền 9–12m</li>
-          <li><b>Liền kề:</b> DT 75–120m²; 4–5 tầng; mặt tiền 5–6m</li>
-          <li><b>Shophouse:</b> DT 90–150m²; 5 tầng; mặt tiền 6–7,5m</li>
-        </ul>
-        <p class="note">Thông số chỉ mang tính minh họa — hãy thay bằng bảng thông số đúng với giỏ hàng bạn đang bán.</p>
-      </div>
-    </div>
-
-    <!-- TIẾN ĐỘ & PHÁP LÝ -->
-    <div class="grid-2">
-      <div class="card" id="tien-do">
-        <h2>Tiến độ</h2>
-        <ul>
-          <li>Hạ tầng chính: …% (cập nhật)</li>
-          <li>Khu liền kề: … dãy hoàn thiện mặt ngoài</li>
-          <li>Khu shophouse: … dãy cất nóc</li>
-          <li>Dự kiến bàn giao: Quý …/20…</li>
-        </ul>
-        <div class="gallery" data-gallery>
-          <figure data-full="https://images.unsplash.com/photo-1512743695286-c7438e45a016?q=80&w=1920">
-            <img loading="lazy" alt="Ảnh tiến độ 1" src="https://images.unsplash.com/photo-1512743695286-c7438e45a016?q=80&w=900">
-          </figure>
-          <figure data-full="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1920">
-            <img loading="lazy" alt="Ảnh tiến độ 2" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=900">
-          </figure>
-        </div>
-      </div>
-      <div class="card" id="phap-ly">
-        <h2>Pháp lý</h2>
-        <ul>
-          <li>Quy hoạch 1/500: (có/đang cập nhật)</li>
-          <li>Giấy phép xây dựng: (có/đang cập nhật)</li>
-          <li>Hình thức sở hữu: (Lâu dài/Ổn định/Nhà ở hình thành trong tương lai)</li>
-        </ul>
-        <p class="note">Vui lòng thay bằng hồ sơ pháp lý chính xác của dự án bạn đang triển khai.</p>
-      </div>
-    </div>
-
-    <!-- LIÊN HỆ / FORM -->
-    <div class="card" id="lien-he">
-      <h2>Nhận tư vấn & bảng giá</h2>
-      <form id="bds-form">
-        <div class="grid-2">
-          <input name="name" placeholder="Họ và tên *" required>
-          <input name="phone" placeholder="Số điện thoại *" required>
-        </div>
-        <input name="email" type="email" placeholder="Email (tuỳ chọn)">
-        <select name="product">
-          <option value="">Quan tâm sản phẩm</option>
-          <option>Biệt thự</option>
-          <option>Liền kề</option>
-          <option>Shophouse</option>
-        </select>
-        <textarea name="note" rows="4" placeholder="Nhu cầu cụ thể…"></textarea>
-        <button type="submit">Gửi yêu cầu</button>
-        <div class="note">Form này có 2 chế độ: (1) gửi về Google Sheets qua Apps Script, (2) fallback mở email nếu chưa cài đặt. Xem hướng dẫn ngay dưới.</div>
-      </form>
-      <div class="muted" style="margin-top:8px">
-        <b>Hướng dẫn kết nối Google Sheets:</b> Tạo Google Apps Script Web App nhận POST JSON và dán URL vào biến <code>APPS_SCRIPT_URL</code> trong phần &lt;script&gt; bên dưới.
       </div>
     </div>
   </div>
 
-  <!-- LIGHTBOX + FORM SCRIPT -->
-  <script>
-    (function(){
-      const root = document.querySelector('#bds-lumira');
-      if(!root) return;
-
-      /* Smooth anchor */
-      root.querySelectorAll('.nav a').forEach(a=>{
-        a.addEventListener('click', e=>{
-          const id=a.getAttribute('href'); if(!id||!id.startsWith('#')) return;
-          e.preventDefault();
-          const el=root.querySelector(id);
-          if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-        });
-      });
-
-      /* Build single lightbox for all galleries in this section */
-      const lb = document.createElement('div');
-      lb.className='lightbox';
-      lb.innerHTML = `
-        <button class="lb-btn lb-close" aria-label="Đóng">✕</button>
-        <div class="lb-ui">
-          <button class="lb-btn lb-prev" aria-label="Trước">‹</button>
-          <button class="lb-btn lb-next" aria-label="Sau">›</button>
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="hero-card">
+        <span class="pill">Lumira Ville • Hải Phòng</span>
+        <h1>Khu đô thị phức hợp: Biệt thự – Liền kề – Shophouse</h1>
+        <div class="sublead">Quy mô ~11.85 ha • Phường Nam Hải, Quận Hải An • Tiện ích nội khu đồng bộ</div>
+        <div class="cta-row">
+          <a class="btn primary" href="tel:0925159339">Gọi ngay 0925 159 339</a>
+          <a class="btn" href="https://zalo.me/0925159339" target="_blank" rel="noopener">Chat Zalo</a>
+          <a class="btn" href="#contact">Đăng ký tham quan</a>
         </div>
-        <img alt="Preview">
-      `;
-      root.appendChild(lb);
-      const lbImg = lb.querySelector('img');
-      const btnPrev = lb.querySelector('.lb-prev');
-      const btnNext = lb.querySelector('.lb-next');
-      const btnClose = lb.querySelector('.lb-close');
+      </div>
+    </div>
+  </header>
 
-      let currentList = []; let index = 0;
+  <main class="container" role="main">
+    <!-- About -->
+    <section id="about">
+      <div class="grid-2">
+        <div class="card">
+          <h2>Tổng quan dự án</h2>
+          <p>Lumira Ville là khu đô thị phức hợp hiện đại tại phường Nam Hải, quận Hải An, Hải Phòng. Dự án phát triển các sản phẩm nhà ở thấp tầng (liền kề, biệt thự) và shophouse với hệ thống cảnh quan – tiện ích nội khu đồng bộ, kết nối thuận tiện tới sân bay, cảng biển và trung tâm thành phố.</p>
+          <ul>
+            <li>Quy mô: ~11,85 ha • Mật độ xây dựng khoảng ~58,8%</li>
+            <li>Dòng sản phẩm: Liền kề • Biệt thự • Shophouse</li>
+            <li>Định hướng: Không gian sống – thương mại – giải trí tích hợp</li>
+          </ul>
+          <small style="color:var(--muted)">Nội dung tổng hợp theo thông tin công khai từ trang dự án và các nguồn BĐS.</small>
+        </div>
+        <div class="card">
+          <h2>Hình phối cảnh</h2>
+          <div class="gallery" style="grid-template-columns:1fr">
+            <img src="https://lumira-ville.vn/wp-content/uploads/2025/05/phoi-canh-du-an-lumira-ville-1-scaled.jpg" alt="Phối cảnh Lumira Ville">
+          </div>
+        </div>
+      </div>
+    </section>
 
-      function openLightbox(list, i){
-        currentList = list;
-        index = i;
-        lbImg.src = currentList[index].dataset.full || currentList[index].querySelector('img')?.src;
-        lb.classList.add('open');
+    <!-- Location -->
+    <section id="location">
+      <div class="grid-2">
+        <div class="card">
+          <h2>Vị trí & kết nối</h2>
+          <p>Tọa lạc trên trục Liên Phường – Nam Hải, kết nối nhanh đến sân bay Cát Bi, các khu cảng Đình Vũ và mạng lưới cao tốc khu vực. Khu vực thừa hưởng hạ tầng đồng bộ, thuận lợi cho an cư và hoạt động thương mại.</p>
+          <ul>
+            <li>Sân bay Cát Bi: ~10 phút</li>
+            <li>Trung tâm Hải Phòng: ~10–15 phút</li>
+            <li>Cao tốc Hà Nội – Hải Phòng: ~10 km</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Bản đồ</h2>
+          <div style="height:360px;border-radius:14px;overflow:hidden">
+            <iframe width="100%" height="100%" frameborder="0" style="border:0"
+              src="https://www.google.com/maps?q=Li%C3%AAn+Ph%C6%B0%E1%BB%9Dng,+Nam+H%E1%BA%A3i,+H%E1%BA%A3i+An,+H%E1%BA%A3i+Ph%C3%B2ng&output=embed"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Masterplan / Amenities -->
+    <section id="masterplan">
+      <div class="card">
+        <h2>Mặt bằng & Tiện ích</h2>
+        <p>Khu đô thị được quy hoạch các phân khu ở, cảnh quan cây xanh, giao thông nội bộ và bãi đỗ xe. Tiện ích nội khu dự kiến gồm công viên, khu vui chơi, khu thương mại – dịch vụ, an ninh 24/7…</p>
+        <div class="grid-3 gallery">
+          <img src="https://lumira-ville.vn/wp-content/uploads/2025/05/mba-1024x505.jpg" alt="Mặt bằng tổng thể">
+          <img src="https://lumira-ville.vn/wp-content/uploads/2025/07/z6852710331842_6361aa0162f5b92ece124adb37c95bf4.jpg" alt="Tuyến phố thương mại & tiện ích">
+          <img src="https://lumira-ville.vn/wp-content/uploads/2025/05/phoi-canh-du-an-lumira-ville-1-1024x576.jpg" alt="Phối cảnh tổng quan">
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <div class="card" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <div>
+          <h2 style="margin-bottom:6px">Nhận bảng giá & chính sách mới nhất</h2>
+          <div style="color:var(--muted)">Liên hệ trực tiếp hoặc để lại thông tin – mình sẽ gọi lại ngay.</div>
+        </div>
+        <div>
+          <a class="btn primary" href="tel:0925159339">Gọi 0925 159 339</a>
+          <a class="btn" href="https://zalo.me/0925159339" target="_blank" rel="noopener">Nhắn Zalo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="contact">
+        <div class="card">
+          <h2>Liên hệ</h2>
+          <p>Mọi thông tin chi tiết, báo giá, chính sách bán hàng và lịch tham quan dự án, vui lòng liên hệ:</p>
+          <p><strong>Hotline:</strong> <a href="tel:0925159339">0925 159 339</a></p>
+          <p><strong>Zalo:</strong> <a href="https://zalo.me/0925159339" target="_blank" rel="noopener">zalo.me/0925159339</a></p>
+          <p><strong>Email:</strong> <a href="mailto:duc9x.lge@gmail.com">duc9x.lge@gmail.com</a></p>
+          <small style="color:var(--muted)">*Trang thông tin cá nhân, không phải website chính thức của chủ đầu tư.</small>
+        </div>
+
+        <div class="card">
+          <h2>Đặt lịch xem thực tế</h2>
+          <!-- Form: mặc định demo tại chỗ. Bạn có thể nối Google Sheets/Email theo chú thích JS bên dưới. -->
+          <form id="contactForm">
+            <label>Họ & tên<br>
+              <input name="name" required style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px">
+            </label><br><br>
+            <label>Số điện thoại<br>
+              <input name="phone" required pattern="[0-9\s]+" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px">
+            </label><br><br>
+            <label>Nội dung quan tâm<br>
+              <textarea name="message" rows="4" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px"></textarea>
+            </label><br><br>
+            <button class="btn primary" type="submit">Gửi yêu cầu</button>
+          </form>
+          <small style="color:var(--muted)">*Hiện form ở trạng thái demo. Có thể kết nối Google Sheets và gửi mail về <b>duc9x.lge@gmail.com</b> – xem chú thích trong mã.</small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating"><a href="tel:0925159339">Gọi 0925 159 339</a></div>
+
+  <footer>
+    <div class="container">
+      <div class="card" style="padding:14px">
+        <div>© Trang thông tin Lumira Ville • Liên hệ 0925 159 339 • Email: duc9x.lge@gmail.com</div>
+        <div style="font-size:12px;margin-top:6px;color:var(--muted)">
+          Ảnh minh họa nhúng từ lumira-ville.vn. Nếu dùng công khai lâu dài, bạn nên xin phép/tải về và lưu trữ trên host của mình.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========= KẾT NỐI FORM (TÙY CHỌN) =========
+    Cách A: Google Sheets + Email (Apps Script)
+      - Tạo Apps Script với doPost, cấp quyền Web app "Anyone"
+      - Dán URL vào biến SCRIPT_URL bên dưới
+    Cách B: Formspree (nhanh)
+      - Tạo form, lấy endpoint dạng https://formspree.io/f/xxxx
+      - Dán vào SCRIPT_URL, vẫn dùng fetch POST JSON
+  ============================================= -->
+  <script>
+    // Điền URL Apps Script (hoặc Formspree) nếu muốn kích hoạt form thật
+    const SCRIPT_URL = ""; // ví dụ: "https://script.google.com/macros/s/AKfycbx.../exec"
+
+    document.getElementById("contactForm").addEventListener("submit", async function(e){
+      e.preventDefault();
+      const data = {
+        name: e.target.name.value,
+        phone: e.target.phone.value,
+        message: e.target.message.value
+      };
+
+      if (!SCRIPT_URL) {
+        alert("Đã ghi nhận yêu cầu (demo). Hãy cấu hình SCRIPT_URL để gửi thật về Google Sheets/Email.");
+        return;
       }
-      function closeLightbox(){ lb.classList.remove('open'); lbImg.src=''; }
-      function nav(dir){
-        if(!currentList.length) return;
-        index = (index + dir + currentList.length) % currentList.length;
-        lbImg.src = currentList[index].dataset.full || currentList[index].querySelector('img')?.src;
-      }
-
-      // Click bind for every gallery figure in this section
-      root.querySelectorAll('[data-gallery]').forEach(gal=>{
-        const figs = Array.from(gal.querySelectorAll('figure'));
-        figs.forEach((fig,i)=>{
-          fig.addEventListener('click', ()=>openLightbox(figs, i));
+      try {
+        await fetch(SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",                // tránh CORS cho Apps Script
+          headers: { "Content-Type":"application/json" },
+          body: JSON.stringify(data)
         });
-      });
-
-      btnPrev.addEventListener('click', ()=>nav(-1));
-      btnNext.addEventListener('click', ()=>nav(1));
-      btnClose.addEventListener('click', closeLightbox);
-      lb.addEventListener('click', (e)=>{ if(e.target===lb) closeLightbox(); });
-      document.addEventListener('keydown', (e)=>{
-        if(!lb.classList.contains('open')) return;
-        if(e.key==='Escape') closeLightbox();
-        if(e.key==='ArrowLeft') nav(-1);
-        if(e.key==='ArrowRight') nav(1);
-      });
-
-      /* CONTACT FORM: Apps Script POST -> fallback mailto */
-      const form = root.querySelector('#bds-form');
-      const APPS_SCRIPT_URL = ""; // TODO: Dán URL Web App (Deploy -> Web App) tại đây
-
-      form?.addEventListener('submit', async (e)=>{
-        e.preventDefault();
-        const data = Object.fromEntries(new FormData(form).entries());
-        data.page = location.href;
-        data.time = new Date().toISOString();
-
-        const payload = { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) };
-
-        if(APPS_SCRIPT_URL){
-          try{
-            const res = await fetch(APPS_SCRIPT_URL, payload);
-            if(res.ok){
-              alert('Đã gửi yêu cầu. Chúng tôi sẽ liên hệ sớm!');
-              form.reset();
-              return;
-            } else {
-              console.warn('Apps Script response:', await res.text());
-            }
-          }catch(err){ console.error(err); }
-        }
-
-        // Fallback: mở email soạn sẵn (đổi email nhận ở dòng dưới)
-        const to = 'duc9x.lge@gmail.com';
-        const subject = encodeURIComponent('[BĐS] Yêu cầu tư vấn từ website');
-        const body = encodeURIComponent(
-`Họ tên: ${data.name||''}
-Điện thoại: ${data.phone||''}
-Email: ${data.email||''}
-Sản phẩm quan tâm: ${data.product||''}
-Ghi chú: ${data.note||''}
-
-Trang gửi: ${data.page}
-Thời gian: ${data.time}`);
-        window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-      });
-    })();
+        alert("✅ Gửi thành công! Chúng tôi sẽ liên hệ sớm nhất.");
+        e.target.reset();
+      } catch (err) {
+        console.error(err);
+        alert("❌ Lỗi kết nối. Vui lòng thử lại!");
+      }
+    });
   </script>
-</section>
-<!-- === /BDS REALTY SECTION === -->
+</body>
+</html>
+
