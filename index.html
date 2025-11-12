@@ -155,12 +155,41 @@
         </div>
         <div class="card">
           <h2>Đặt lịch xem thực tế</h2>
-          <form onsubmit="alert('Đã gửi thông tin! Mình sẽ liên hệ ngay.'); return false;">
-            <label>Họ & tên<br><input required name="name" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px"></label><br><br>
-            <label>Số điện thoại<br><input required name="phone" pattern="[0-9\s]+" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px"></label><br><br>
-            <label>Nội dung quan tâm<br><textarea name="msg" rows="4" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px"></textarea></label><br><br>
-            <button class="btn primary" type="submit">Gửi yêu cầu</button>
-          </form>
+      <form id="contactForm">
+  <label>Họ & tên<br>
+    <input required name="name" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px">
+  </label><br><br>
+  <label>Số điện thoại<br>
+    <input required name="phone" pattern="[0-9\s]+" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px">
+  </label><br><br>
+  <label>Nội dung quan tâm<br>
+    <textarea name="message" rows="4" style="width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px"></textarea>
+  </label><br><br>
+  <button class="btn primary" type="submit">Gửi yêu cầu</button>
+</form>
+
+<script>
+  document.getElementById("contactForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+    const data = {
+      name: e.target.name.value,
+      phone: e.target.phone.value,
+      message: e.target.message.value
+    };
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbx3Abm4_9QIg25ZKVZNvRlTVbqa9MjQ8viPum-LxzWHFrVH0bqnyjtatc3okfZ19TjJz/exec", {
+        method: "POST",
+        body: JSON.stringify(data)
+      });
+      alert("✅ Gửi thành công! Chúng tôi sẽ liên hệ sớm nhất.");
+      e.target.reset();
+    } catch (err) {
+      alert("❌ Lỗi kết nối. Vui lòng thử lại sau!");
+      console.error(err);
+    }
+  });
+</script>
+
           <small style="color:var(--muted)">*Biểu mẫu demo chạy tại chỗ. Có thể nối sang Google Forms/Sheets theo yêu cầu.</small>
         </div>
       </div>
